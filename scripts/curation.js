@@ -102,7 +102,6 @@ window.addEventListener('load', async function () {
 
   // console.log('zoraNftMetadatasRaw', zoraNftMetadatasRaw);
 
-  const creatorNames = [];
   const zoraNftMetadatas = [];
   zoraNftMetadatasRaw.forEach((nft) => {
     const zoraId = nft.data.media.id;
@@ -110,10 +109,6 @@ window.addEventListener('load', async function () {
     const creator = nft.data.media.creator.id;
     const metaDataUri = nft.data.media.metadataURI;
     zoraNftMetadatas.push({ zoraId, contentUri, creator, metaDataUri });
-
-    if (creator && !creatorNames.includes(creator)) {
-      creatorNames.push(creator);
-    }
   });
 
   // console.log('zoraNftMetadatas', zoraNftMetadatas);
@@ -128,6 +123,7 @@ window.addEventListener('load', async function () {
   const jsonMetadatasPromisesDone = await Promise.all(jsonMetadatasPromises);
   const ensLookupPromisesDone = await Promise.all(ensLookupPromises);
 
+  const creatorNames = [];
   ensLookupPromisesDone.forEach((ens, i) => {
     const jsonMetadata = jsonMetadatasPromisesDone[i];
     let ensName;
@@ -136,6 +132,11 @@ window.addEventListener('load', async function () {
     } catch(e) { ensName = null}
     zoraNftMetadatas[i].creatorEns = ensName;
     zoraNftMetadatas[i].metaData = jsonMetadata;
+    if (ensName && !creatorNames.includes(ensName)) {
+      creatorNames.push(ensName);
+    } else if (!ensName && !creatorNames.includes(zoraNftMetadatas[i].creator)) {
+      creatorNames.push(zoraNftMetadatas[i].creator);
+    }
   });
 
   console.log('zoraNftMetadatas2', zoraNftMetadatas);
