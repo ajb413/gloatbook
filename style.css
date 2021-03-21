@@ -1,0 +1,399 @@
+html, body {
+  margin: 0px;
+  background-color: #FFFFFF;
+}
+
+body {
+  min-height: 90vh;
+}
+
+.sonsie {
+  font-family: 'Sonsie One', cursive;
+}
+
+nav {
+  height: 100px;
+  width: 100%;
+}
+
+nav.curator {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: url('./images/grimesclouds.png');
+  background-position: center;
+  position: fixed;
+  z-index: 1;
+}
+
+body > div.spacer {
+  width: 100%;
+  height: 30px;
+  background-color: #FFFFFF;
+}
+
+nav .container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+nav .container .left,
+nav .container .right {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  white-space: normal;
+  vertical-align: top;
+}
+
+nav .container .right .curator-name {
+  font-family: 'Sonsie One', cursive;
+  line-height: 100px;
+  text-align: right;
+  font-size: 50px;
+  color: #eeeeee;
+  text-shadow: 1px 1px 8px #050505;
+  margin: 0px;
+}
+
+nav .container .left .gloat-logo {
+  z-index: 1;
+  height: 100px;
+  left: -100px;
+  top: -30px;
+  position: relative;
+}
+
+nav .container .button {
+  width: 180px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 25px;
+  background-color: #666666;
+  border: 1px solid #222222;
+  font-family: 'Work Sans', sans-serif;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-size: 16px;
+  float: right;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+body hr {
+  margin-top: 60px;
+  max-width: 1000px;
+}
+
+.main {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+}
+
+.curator-main {
+  max-width: 1000px;
+  margin: auto;
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  html body .main,
+  html body .main .left,
+  html body .main .right {
+    display: block;
+    margin: auto;
+  }
+}
+
+.main > * {
+  vertical-align: top;
+}
+
+.main .title {
+  text-transform: uppercase;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.main table {
+  margin: auto;
+}
+
+.main table td,
+.main table th {
+  padding: 0px 14px;
+  line-height: 50px;
+  text-align: center;
+  width: 0px;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.main table tr {
+  cursor: pointer;
+}
+
+.main table tr > td:last-child,
+.main table tr > th:last-child {
+  text-align: right;
+}
+
+a:link,
+a:visited,
+.main table th {
+  font-family: 'Work Sans', sans-serif;
+  text-transform: lowercase;
+  color: #769988;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.curated,
+.curated a{
+  font-size: 16px;
+}
+
+.curated {
+  font-family: 'Work Sans', sans-serif;
+  text-transform: lowercase;
+  
+  margin-top: 10px;
+  margin-left: 14px;
+}
+
+.main table tr > td:first-child,
+.main table tr:nth-child(2) > td,
+.main table tr:nth-child(2) > td:first-child {
+  font-size: 20px;
+}
+
+.main table tr th:first-child,
+.main table tr td:first-child {
+  text-align: right;
+  vertical-align: middle;
+}
+
+.main table tr td:nth-child(2),
+.main table tr th:nth-child(2) {
+  text-align: left;
+}
+
+.main table tr:nth-child(2) { opacity:   1; }
+.main table tr:nth-child(3) { opacity: 0.6; }
+.main table tr:nth-child(4) { opacity: 0.4; }
+.main table tr:nth-child(5) { opacity: 0.2; }
+.main table tr:nth-child(6) { opacity: 0.1; }
+
+.main .left {
+  width: 100%;
+  max-width: 60%;
+}
+
+.main .right {
+  display: inline-block;
+  flex-grow: 100;
+}
+
+.main .right .border {
+  position: relative; 
+  height: 380px;
+  width: 345px;
+  border: 1px solid #aaaaaa;
+  background-color: #eeeeee;
+  display: block;
+  margin: auto;
+}
+
+.main .right .border .panel {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 10px auto 0px auto;
+  height: 100%;
+  width: 100%;
+  max-height: 90%;
+  max-width: 95%;
+  border: 1px solid #aaaaaa;
+  background-color: #FFFFFF;
+}
+
+.main .right .border .panel img {
+  width: 110px;
+  height: 110px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.main .right .border .title-bar {
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  width: 100%;
+  height: 65px;
+  background-color: #FFFFFF;
+  border: 1px solid #aaaaaa;
+  box-shadow: 0px 1px 4px 0px #888888;
+  user-select: none;
+  cursor: pointer;
+}
+
+.main .right .border .title-bar .gallery-name {
+  font-family: 'Sonsie One', cursive;
+  line-height: 65px;
+  text-align: right;
+  font-size: 20px;
+  color: #eeeeee;
+  text-shadow: 1px 1px 8px #050505;
+  margin-right: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .curator-main {
+  margin-top: 100px;
+}
+
+body .curator-main .meta-section {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+.curator-main h3 {
+  font-family: 'Sonsie One', cursive;
+  font-size: 30px;
+  color: #000000;
+}
+
+.curator-main ul {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  color: #769988;
+  list-style-type: none;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.curator-main .meta-section {
+  white-space: nowrap;
+  display: flex;
+}
+
+.curator-main .meta-section .left,
+.curator-main .meta-section .right {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  white-space: normal;
+  vertical-align: top;
+}
+
+.curator-main .meta-section .right,
+.curator-main .meta-section .right a {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  color: #000000;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  text-align: right;
+}
+
+html body .curator-main .meta-section .right a {
+  color: #769988;
+}
+
+.curator-main .meta-section .right .info,
+.curator-main .meta-section .right .profile {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.curator-main .meta-section .right .bio {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.curator-main .meta-section .twitter {
+  fill: #c5658c;
+}
+
+.curator-main .meta-section img.profile {
+  width: 150px;
+  height: 150px;
+}
+
+.curator-main .meta-section .right .spacer {
+  width: 100%;
+  height: 30px;
+}
+
+.curator-main .meta-section .etherscan-button {
+  width: 180px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 25px;
+  background-color: #c5658c;
+  font-family: 'Work Sans', sans-serif;
+  color: #FFFFFF;
+  font-size: 16px;
+  float: right;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.curator-main .meta-section .etherscan-button img {
+  float: right;
+  fill: #FFFFFF;
+  height: 70%;
+  margin-top: 4px;
+  margin-right: 6px;
+  filter: invert(1);
+}
+
+.nft-item {
+  width: 350px;
+}
+
+.curator-main .nft-item .artist-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 46px;
+}
+
+.curator-main .nft-item .nft-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 30px;
+}
+
+.curator-main .nft-item .nft-description {
+  font-size: 14px;
+  color: #769988;
+  line-height: 26px;
+}
+
+.curator-main .nft-item .nft-visual {
+  width: 100%;
+  border: none;
+}
+
+.nft-item .artist-name,
+.nft-item .nft-name,
+.nft-item .nft-description {
+  font-family: 'Work Sans', sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
